@@ -26,4 +26,5 @@
 
 📘3. *Interfaz gráfica*:
    - La calculadora muestra botones, el campo de entrada y el resultado de las operaciones en tiempo real.
- 
+ ![konata-izumi-konata](https://github.com/user-attachments/assets/5a6e0c71-3354-4b7b-9d0b-444484da940a)
+
