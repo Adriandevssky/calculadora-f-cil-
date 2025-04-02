@@ -1,0 +1,4 @@
+Idea principal para mostras y desarrollar un programa que se va en calculcar y / o hacer operacion basicas o complejas
+se propone utilizar la bliblioteca incluidad de python : Tkinter para mostras la parte visual de la calculadora 
+se impletara un visual que de un feedback facil de usar al usario 
+se implemeta una razonamiento logico para que la calculadora muestre mensajes si las operas no son validas o redundantes
