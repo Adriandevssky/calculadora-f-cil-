@@ -52,33 +52,22 @@ def calculate_result():
             show_notification("La expresión está vacía. Por favor, ingresa una operación.", "#ffa000", clear_on_error=True)
             return
 
-        # Separar los operandos y el operador
-        tokens = expression.split()
-        if len(tokens) != 3:  # Validar que haya exactamente 3 elementos: número, operador, número
-            show_notification("Formato inválido: usa 'número operador número'. Ejemplo: 5 + 3", "#ffa000", clear_on_error=True)
+        # Limpiar la expresión eliminando espacios innecesarios
+        expression = expression.replace(" ", "")
+
+        # Validar que la expresión solo contenga números, operadores y puntos decimales
+        if not all(char.isdigit() or char in "+-*/." for char in expression):
+            show_notification("Expresión inválida. Usa solo números y operadores (+, -, *, /).", "#ffa000", clear_on_error=True)
             return
 
-        num1, operator, num2 = tokens
+        # Evaluar la expresión directamente
         try:
-            num1, num2 = float(num1), float(num2)  # Validar que los números sean válidos
-        except ValueError:
-            show_notification("Por favor, ingresa números válidos. Ejemplo: 5 + 3", "#d32f2f", clear_on_error=True)
+            result = eval(expression)  # Evalúa la expresión matemática
+        except ZeroDivisionError:
+            show_notification("Error: División por cero", "#d32f2f", clear_on_error=True)
             return
-
-        # Realizar la operación
-        if operator == '+':
-            result = add(num1, num2)
-        elif operator == '-':
-            result = subtract(num1, num2)
-        elif operator == '*':
-            result = multiply(num1, num2)
-        elif operator == '/':
-            result = divide(num1, num2)
-            if isinstance(result, str):  # Manejar división por cero
-                show_notification(result, "#d32f2f", clear_on_error=True)
-                return
-        else:
-            show_notification("Operador inválido: usa '+', '-', '*', '/'. Ejemplo: 5 + 3", "#ffa000", clear_on_error=True)
+        except Exception:
+            show_notification("Expresión inválida. Por favor, verifica la operación.", "#ffa000", clear_on_error=True)
             return
 
         # Guardar en el historial y mostrar el resultado
