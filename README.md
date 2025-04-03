@@ -1,3 +1,5 @@
+Coloboradores : MIA TROCONES ALVARADO , YESENIA ZAMORA ANGULO , ADRIAN ACOSTA BONILLA 
+
 ![konata-luckystar](https://github.com/user-attachments/assets/c5972285-8485-4f2b-bfe4-185924fd5d9e)
 # calculadora
 ¿Qué problema resuelve o qué funcionalidad tiene?
